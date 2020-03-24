@@ -4,19 +4,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CategoryPage {
-	private static By clickonphoneLoc = By.linkText("Phones");
+	private  By clickonphoneLoc = By.linkText("Phones");
 	private static By clickonlaptopLoc = By.linkText("Laptops");
 	private static By clickonmonitorLoc = By.linkText("Monitors");
 
-	public static void clickonphone(WebDriver driver) {
+	private WebDriver driver;
+	public CategoryPage(WebDriver driver) {
+		this.driver=driver;
+	}
+	public void clickonphone() {
 		driver.findElement(clickonphoneLoc).click();
 	}
 
-	public static void clickonlaptop(WebDriver driver) {
+	public  void clickonlaptop() {
 		driver.findElement(clickonlaptopLoc).click();
 	}
 
-	public static void clickonmonitor(WebDriver driver) {
+	public void clickonmonitor() {
 		driver.findElement(clickonmonitorLoc).click();
 	}
 }

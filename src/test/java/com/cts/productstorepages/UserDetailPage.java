@@ -14,39 +14,46 @@ public class UserDetailPage
 	private static By purchaseLoc=By.xpath("//button[text()='Purchase']");
 	private static By clickOnOkLoc=By.xpath("//button[@class='confirm btn btn-lg btn-primary']");
 	private static By clickOnCloseLoc = By.xpath("//div[@id='orderModal']//button[@class='btn btn-secondary'][contains(text(),'Close')]");
-	public static void enterName(WebDriver driver, String name)
+
+	private WebDriver driver;
+	public UserDetailPage(WebDriver driver){
+		this.driver=driver;
+	}
+	
+	
+	public void enterName( String name)
 	{
 	driver.findElement(nameLoc).sendKeys(name);
 	}
-	public static void enterCountry(WebDriver driver, String countryName)
+	public void enterCountry(String countryName)
 	{
 	driver.findElement(countryLoc).sendKeys(countryName);
 	}
-	public static void enterCity(WebDriver driver, String cityName)
+	public  void enterCity(String cityName)
 	{
 	driver.findElement(cityLoc).sendKeys(cityName);
 	}
-	public static void enterCreditCard(WebDriver driver, String creditCardName)
+	public  void enterCreditCard(String creditCardName)
 	{
 	driver.findElement(creditCardLoc).sendKeys(creditCardName);
 	}
-	public static void enterMonth(WebDriver driver, String month)
+	public  void enterMonth(String month)
 	{
 	driver.findElement(monthLoc).sendKeys(month);
 	}
-	public static void enterYear(WebDriver driver, String year)
+	public  void enterYear( String year)
 	{
 	driver.findElement(yearLoc).sendKeys(year);
 	}
-	public static void clickOnPurchase(WebDriver driver)
+	public  void clickOnPurchase()
 	{
 	driver.findElement(purchaseLoc).click();
 	}
-	public static void clickOnOk(WebDriver driver)
+	public  void clickOnOk()
 	{
 		driver.findElement(clickOnOkLoc).click();
 	}
-	public static void clickOnClose(WebDriver driver)
+	public  void clickOnClose()
 	{
 		driver.findElement(clickOnCloseLoc).click();
 	}

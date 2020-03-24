@@ -5,9 +5,15 @@ import org.openqa.selenium.WebDriver;
 
 public class CartInfoPage {
 
-	private static By clickOnCartLoc =By.linkText("Cart");
+	private  By clickOnCartLoc =By.linkText("Cart");
 	
-	public static void clickOnCart(WebDriver driver)
+	private WebDriver driver;
+	public CartInfoPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	public void clickOnCart()
 	{
 		driver.findElement(clickOnCartLoc).click();
 	}

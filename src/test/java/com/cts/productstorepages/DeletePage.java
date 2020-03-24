@@ -6,8 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class DeletePage {
- public static By clickOnDeleteLoc=(By.linkText("Delete"));
-	public static void clickOnDelete(WebDriver driver)
+ public  By clickOnDeleteLoc=(By.linkText("Delete"));
+ private WebDriver driver;
+ public DeletePage(WebDriver driver) {
+	 this.driver=driver;
+ }
+	public void clickOnDelete()
 	{
 		driver.findElement(clickOnDeleteLoc).click();
 	}

@@ -7,28 +7,36 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ContactInfoPage {
 
-	private static By clickOnContactLoc=By.xpath("(//a[@class='nav-link'])[2]");
-	private static By enterRecepientMailIdLoc =By.id("recipient-email");
-	private static By enterMessageLoc=By.id("message-text");
-	private static By  enterRecepientNameLoc=By.id("recipient-name");
-	private static By clickOnMessageLoc  =By.xpath("//button[text()='Send message']");
-	public static void clickOnContact(WebDriver driver)
+	private  By clickOnContactLoc=By.xpath("(//a[@class='nav-link'])[2]");
+	private  By enterRecepientMailIdLoc =By.id("recipient-email");
+	private  By enterMessageLoc=By.id("message-text");
+	private  By  enterRecepientNameLoc=By.id("recipient-name");
+	private  By clickOnMessageLoc  =By.xpath("//button[text()='Send message']");
+	
+	private WebDriver driver;
+	
+	public ContactInfoPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	public void clickOnContact()
 	{
 	driver.findElement(clickOnContactLoc).click();
 	}
-	public static void enterRecepientMailId(WebDriver driver, String userName)
+	public void enterRecepientMailId(String userName)
 	{
 	driver.findElement(enterRecepientMailIdLoc).sendKeys(userName);
 	}
-	public static void enterRecepientName(WebDriver driver,String password)
+	public void enterRecepientName(String password)
 	{
 	driver.findElement(enterRecepientNameLoc).sendKeys(password);
 	}
-	public static void enterMessage(WebDriver driver,String Message)
+	public void enterMessage(String Message)
 	{
 	driver.findElement(enterMessageLoc).sendKeys(Message);
 	}
-	public static void clickOnMessage(WebDriver driver)
+	public void clickOnMessage()
 	{
 	driver.findElement(clickOnMessageLoc).click();
 	

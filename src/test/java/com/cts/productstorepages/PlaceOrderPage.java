@@ -5,9 +5,13 @@ import org.openqa.selenium.WebDriver;
 
 public class PlaceOrderPage {
 
-	private static By clickOnPlaceOrderLoc= By.xpath("//button[text()='Place Order']");
+	private By clickOnPlaceOrderLoc= By.xpath("//button[text()='Place Order']");
+	private WebDriver driver;
+	public PlaceOrderPage(WebDriver driver) {
+		this.driver=driver;
+	}
 	
-	public static void clickOnPlaceOrder(WebDriver driver)
+	public  void clickOnPlaceOrder()
 	{
 		driver.findElement(clickOnPlaceOrderLoc).click();
 	}

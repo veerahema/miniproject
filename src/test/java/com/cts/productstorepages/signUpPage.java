@@ -5,23 +5,27 @@ import org.openqa.selenium.WebDriver;
 
 public class signUpPage {
 
-	private static By clickOnSignUpLoc=By.linkText("Sign up");
-	private static By enterUserNameLoc=By.id("sign-username");
-	private static By enterPasswordLoc=By.id("sign-password");
-	private static By againClickOnSignUpLoc =By.xpath("//button[text()='Sign up']");
-	public static void clickOnSignUp(WebDriver driver)
+	private  By clickOnSignUpLoc=By.linkText("Sign up");
+	private  By enterUserNameLoc=By.id("sign-username");
+	private  By enterPasswordLoc=By.id("sign-password");
+	private  By againClickOnSignUpLoc =By.xpath("//button[text()='Sign up']");
+	private WebDriver driver;
+	public signUpPage(WebDriver driver) {
+		this.driver=driver;
+	}
+	public void clickOnSignUp()
 	{
 		driver.findElement(clickOnSignUpLoc).click();
 	}
-	public static void enterUserName(WebDriver driver,String userName)
+	public void enterUserName(String userName)
 	{
 		driver.findElement(enterUserNameLoc).sendKeys(userName);
 	}
-	public static void enterPassword(WebDriver driver,String password)
+	public void enterPassword(String password)
 	{
 		driver.findElement(enterPasswordLoc).sendKeys(password);
 	}
-	public static void againClickOnSignUp(WebDriver driver)
+	public void againClickOnSignUp()
 	{
 		driver.findElement(againClickOnSignUpLoc).click();
 	}
