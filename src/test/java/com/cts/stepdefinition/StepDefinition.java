@@ -527,7 +527,7 @@ public class StepDefinition {
 		UserDetailPage.enterCreditCard(driver, creditCard);
 		//entering the expiry month of the credit card
 		UserDetailPage.enterMonth(driver, month);
-		// entering the expiry year of the credit card
+		// entering the expiry  year of the credit card
 		UserDetailPage.enterYear(driver, year);
 		//click on close
 		UserDetailPage.clickOnClose(driver);
@@ -648,7 +648,7 @@ public class StepDefinition {
 
 	@Then("I search for laptops visibility for assertion")
 	public void i_search_for_laptops_visibility_for_assertion() {
-		// getting the etxt and storing it in a string variable
+		// getting the text and storing it in a string variable
 		String actualText = driver.findElement(By.xpath("//img[@src='imgs/sony_vaio_5.jpg']/ancestor::a")).getText();
 		// comparing the expected with actual
 		Assert.assertEquals(actualText, "");
