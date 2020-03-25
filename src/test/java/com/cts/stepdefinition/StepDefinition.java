@@ -23,7 +23,7 @@ import com.cts.productstorepages.signUpPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.lu.a;
+//import io.cucumber.java.lu.a;
 
 public class StepDefinition {
 
@@ -646,7 +646,8 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
-
+// scenario: empty username and password foe sign up
+	
 	@When("I will not enter the username {string} and i will not enter the password {string}")
 	public void i_will_not_enter_the_username_and_i_will_not_enter_the_password(String userName, String password)
 			throws InterruptedException {
