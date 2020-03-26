@@ -10,7 +10,7 @@ public class LoginPage
 	private static By clickOnLogin =By.partialLinkText("Log");
 	private static By clickOnLoginAgainLoc = By.xpath("//button[text()='Log in']");
 	private static By clickOnHomePageLoc=By.partialLinkText("Home");
-	private static By clickOnNextPageLoc=By.xpath("//button[text()='Next']");
+	private static By clickOnNextPageLoc=By.xpath("//button[contains(text(),'Log in')]");
 	
 	private WebDriver driver;
 	public LoginPage(WebDriver driver) {

@@ -56,7 +56,7 @@ Scenario: Filling all the userdetails and click on close button
 	When I enter the useer name as 'kavya' and country as 'India' and city as 'chirala' and credit card as '605385697632' and month as 'nov' and year as '2022' and click on purchase order and click on close 
 	Then It should go back to the cartpage and assert for 'PRODUCT STORE' 
 Scenario: Valid signUp 
-	When I enter username as 'sulochana@gmail.com' and Password as 'sulochana' 
+	When I enter username as 'suresh@gmail.com' and Password as 'sulochana' 
 	Then I should click on signUp 
 Scenario: Already exsisted user for SignUp 
 	When I enter the already used username as 'kavyakalathuru12@gmail.com' and password as 'kavyakalathuru' 

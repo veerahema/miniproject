@@ -230,8 +230,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_will_not_enter_valid_username_as_and_i_will_enter_valid_password_as(java.lang.String,java.lang.String)"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d80.0.3987.149)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027USER-PC\u0027, ip: \u0027192.168.55.104\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027amd64\u0027, os.version: \u00276.1\u0027, java.version: \u002710.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\\Users\\USER\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52546}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 893c3d25b4351a1f64862874bdcc4f94\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\r\n\tat com.cts.productstorepages.LoginPage.clickOnLoginAgain(LoginPage.java:34)\r\n\tat com.cts.stepdefinition.StepDefinition.i_will_not_enter_valid_username_as_and_i_will_enter_valid_password_as(StepDefinition.java:122)\r\n\tat ✽.I  will not enter valid username as \u0027\u0027 and i will enter valid password as \u0027kavyakalathuru\u0027(file:///C:/Users/USER/eclipse-workspace/ProductStoreBDD2/src/main/resources/feature/Login.feature:26)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "I should get  popup message as \u0027Please fill out Username and Password.\u0027",
@@ -241,7 +240,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_should_get_popup_message_as(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.background({
   "name": "Below are the common steps for the scenarios",
@@ -311,8 +310,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_enter_valid_recepeintEmail_as_and_recepientName_as_and_message_as(java.lang.String,java.lang.String,java.lang.String)"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Thanks for the message!!}\n  (Session info: chrome\u003d80.0.3987.149): Thanks for the message!!\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027USER-PC\u0027, ip: \u0027192.168.55.104\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027amd64\u0027, os.version: \u00276.1\u0027, java.version: \u002710.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\\Users\\USER\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52601}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 912ca24083480a3da962c7a10872d5db\n*** Element info: {Using\u003dxpath, value\u003d//button[text()\u003d\u0027Send message\u0027]}\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)\r\n\tat org.openqa.selenium.By$ByXPath.findElement(By.java:353)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)\r\n\tat com.cts.productstorepages.ContactInfoPage.clickOnMessage(ContactInfoPage.java:41)\r\n\tat com.cts.stepdefinition.StepDefinition.i_enter_valid_recepeintEmail_as_and_recepientName_as_and_message_as(StepDefinition.java:200)\r\n\tat ✽.I enter valid recepeintEmail as \u0027kavyakalathuru1998@gmail.com\u0027 and recepientName as \u0027kavyakalathuru\u0027 and message as \u0027want to buy a mobile\u0027(file:///C:/Users/USER/eclipse-workspace/ProductStoreBDD2/src/main/resources/feature/Login.feature:32)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "I should get complete contact filling popup message as \u0027Thanks for the message!!\u0027",
@@ -322,7 +320,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_should_get_complete_contact_filling_popup_message_as(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.background({
   "name": "Below are the common steps for the scenarios",
@@ -682,7 +680,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_should_click_on_signUp()"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: expected [Sign up successful.] but found [This user already exist.]\r\n\tat org.testng.Assert.fail(Assert.java:97)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:136)\r\n\tat org.testng.Assert.assertEquals(Assert.java:118)\r\n\tat org.testng.Assert.assertEquals(Assert.java:575)\r\n\tat org.testng.Assert.assertEquals(Assert.java:585)\r\n\tat com.cts.stepdefinition.StepDefinition.i_should_click_on_signUp(StepDefinition.java:614)\r\n\tat ✽.I should click on signUp(file:///C:/Users/USER/eclipse-workspace/ProductStoreBDD2/src/main/resources/feature/Login.feature:60)\r\n",
+  "error_message": "java.lang.AssertionError: expected [Sign up successful.] but found [Please fill out Username and Password.]\r\n\tat org.testng.Assert.fail(Assert.java:97)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:136)\r\n\tat org.testng.Assert.assertEquals(Assert.java:118)\r\n\tat org.testng.Assert.assertEquals(Assert.java:575)\r\n\tat org.testng.Assert.assertEquals(Assert.java:585)\r\n\tat com.cts.stepdefinition.StepDefinition.i_should_click_on_signUp(StepDefinition.java:613)\r\n\tat ✽.I should click on signUp(file:///C:/Users/USER/eclipse-workspace/ProductStoreBDD2/src/main/resources/feature/Login.feature:60)\r\n",
   "status": "failed"
 });
 formatter.background({
@@ -753,8 +751,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_will_not_enter_the_username_and_i_will_not_enter_the_password(java.lang.String,java.lang.String)"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.ElementNotInteractableException: element not interactable\n  (Session info: chrome\u003d80.0.3987.149)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027USER-PC\u0027, ip: \u0027192.168.55.104\u0027, os.name: \u0027Windows 7\u0027, os.arch: \u0027amd64\u0027, os.version: \u00276.1\u0027, java.version: \u002710.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 80.0.3987.149, chrome: {chromedriverVersion: 79.0.3945.36 (3582db32b3389..., userDataDir: C:\\Users\\USER\\AppData\\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52878}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}\nSession ID: 2c63eeedaf8820ae3fb81338128ee7ed\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\r\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\r\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\r\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\r\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\r\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\r\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\r\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)\r\n\tat org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)\r\n\tat com.cts.productstorepages.signUpPage.againClickOnSignUp(signUpPage.java:30)\r\n\tat com.cts.stepdefinition.StepDefinition.i_will_not_enter_the_username_and_i_will_not_enter_the_password(StepDefinition.java:656)\r\n\tat ✽.I will not enter the username \u0027\u0027 and i will not enter the password \u0027\u0027(file:///C:/Users/USER/eclipse-workspace/ProductStoreBDD2/src/main/resources/feature/Login.feature:65)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "I should click on signup and I should get the popup message as \u0027Please fill out Username and Password.\u0027",
@@ -764,7 +761,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_should_click_on_signup_and_I_should_get_the_popup_message_as(java.lang.String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.background({
   "name": "Below are the common steps for the scenarios",

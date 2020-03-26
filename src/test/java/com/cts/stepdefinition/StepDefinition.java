@@ -119,7 +119,7 @@ public class StepDefinition {
 			String password) {
 		// click on login in the home page
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.clickOnLoginAgain();
+		loginpage.clickOnLogin();;
 		// providing explicit wait of 30 sec to locate for the presence of username and
 		// password elements
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -195,7 +195,6 @@ public class StepDefinition {
 		contactinfopage.enterRecepientName(password);
 		// entering any message
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("message-text")));
-		contactinfopage.clickOnMessage();
 		// click on send message in the pop up
 		contactinfopage.clickOnMessage();
 	}
@@ -320,6 +319,7 @@ public class StepDefinition {
 		} else {
 			System.out.println("passed");
 		}
+		driver.quit();
 	}
 	// Scenario: Placing order
 
@@ -574,12 +574,12 @@ public class StepDefinition {
 		// entering the expiry year of the credit card
 		userdetailpage.enterYear(year);
 		// click on close
-		userdetailpage.enterYear(year);
+		userdetailpage.clickOnClose();
 	}
 
 	@Then("It should go back to the cartpage and assert for {string}")
 	public void it_should_go_back_to_the_cartpage_and_assert_for(String expectedTextInHomeIcon) {
-		// getting the text and storing it in astring variable
+		// getting the text and storing it in a string variable
 		String actualTextInHomeIcon1 = driver.findElement(By.partialLinkText("PRODUCT STORE")).getText();
 		// comparing the expected with actual
 		Assert.assertEquals(actualTextInHomeIcon1, expectedTextInHomeIcon);
@@ -646,14 +646,14 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
-// scenario: empty username and password foe sign up
+// scenario: empty username and password for sign up
 	
 	@When("I will not enter the username {string} and i will not enter the password {string}")
 	public void i_will_not_enter_the_username_and_i_will_not_enter_the_password(String userName, String password)
 			throws InterruptedException {
 		// click on signup
 		signUpPage signuppage = new signUpPage(driver);
-		signuppage.againClickOnSignUp();
+		signuppage.clickOnSignUp();
 		Thread.sleep(1000);
 		// entering username
 		signuppage.enterUserName(userName);
@@ -666,7 +666,7 @@ public class StepDefinition {
 		//click on signup in home page
 		signUpPage signuppage = new signUpPage(driver);
 		signuppage.againClickOnSignUp();
-		//providing some exlicit wait of 30 seconds for alert
+		//providing some explicit wait of 30 seconds for alert
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.alertIsPresent());
 		//getting the text and storing it in string variable
