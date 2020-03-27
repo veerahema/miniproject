@@ -2,23 +2,22 @@ Feature: Login
 	In order to buy the product in webpage
  As a customer
  I want to get access to the portal
- 
 Background: Below are the common steps for the scenarios 
 	Given I have browser with productstore page. 
-	
+Scenario: Login Valid Credential using excel
+	When I enter login details from Excel "src/test/resources/excel/Productstore.xlsx" with SheetName "LoginValidCredential" 
+	Then I should access to the portal with title as 'Log out' 
 Scenario: Valid Credential Test 
-
 	When I enter username as 'kavyakalathuru1998@gmail.com' and I enter password as 'kavyakalathuru' 
 	Then I Should access to the portal with title as 'Log out' 
-	
-Scenario Outline: Valid Credential Test
-	When I enter username as '<username>' and I enter password as '<password>'
-	Then I Should access to the portal with title as 'Log out'
-	Examples:
-	|username|password|
-	|veerahemagovada@gmail.com|veerahema|
-	|oohasri234@gmail.com|9493824001|
-	
+Scenario Outline: Valid Credential Test 
+	When I enter username as '<username>' and I enter password as '<password>' 
+	Then I Should access to the portal with title as 'Log out' 
+	Examples: 
+		|username|password|
+		|veerahemagovada@gmail.com|veerahema|
+		|oohasri234@gmail.com|9493824001|
+		
 Scenario: Invalid Password Credential 
 	When I enter valid username as 'kavyakalathuru1998@gmail.com' and password as 'kavyakalathuru1' 
 	Then I should get error popup message as 'Wrong password.' 
@@ -56,7 +55,7 @@ Scenario: Filling all the userdetails and click on close button
 	When I enter the useer name as 'kavya' and country as 'India' and city as 'chirala' and credit card as '605385697632' and month as 'nov' and year as '2022' and click on purchase order and click on close 
 	Then It should go back to the cartpage and assert for 'PRODUCT STORE' 
 Scenario: Valid signUp 
-	When I enter username as 'suresh@gmail.com' and Password as 'sulochana' 
+	When I enter username as 'priyankaraina@gmail.com' and Password as 'priyanka' 
 	Then I should click on signUp 
 Scenario: Already exsisted user for SignUp 
 	When I enter the already used username as 'kavyakalathuru12@gmail.com' and password as 'kavyakalathuru' 
@@ -73,3 +72,4 @@ Scenario: checking categories for Laptops
 Scenario: checking categories for Monitors 
 	When I click on monitors it will show only monitors 
 	Then I search for monitors visibility for assertion 
+	

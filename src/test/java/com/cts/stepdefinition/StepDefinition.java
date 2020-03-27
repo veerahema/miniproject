@@ -1,14 +1,13 @@
 package com.cts.stepdefinition;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import com.cts.productstorepages.AddToCartPage;
 import com.cts.productstorepages.CartInfoPage;
 import com.cts.productstorepages.CategoryPage;
@@ -19,11 +18,10 @@ import com.cts.productstorepages.PlaceOrderPage;
 import com.cts.productstorepages.ProductPage;
 import com.cts.productstorepages.UserDetailPage;
 import com.cts.productstorepages.signUpPage;
-
+import com.cts.utils.ReadExcel;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-//import io.cucumber.java.lu.a;
 
 public class StepDefinition {
 
@@ -42,13 +40,46 @@ public class StepDefinition {
 		// getting the link
 		driver.get("https://www.demoblaze.com");
 	}
+
+	@When("I enter login details from Excel {string} with SheetName {string}")
+	public void i_enter_login_details_from_Excel_with_SheetName(String fileDetails, String sheetName)
+			throws IOException, InterruptedException {
+		// reading from excel
+		String str[][] = ReadExcel.getSheetIntoStringArray(fileDetails, sheetName);
+		// click on login in home page
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.clickOnLogin();
+		Thread.sleep(2000);
+		// providing some explicit wait of 30 sec
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("loginusername")));
+		// giving username from excel
+		loginpage.enterUserName(str[0][0]);
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("loginpassword")));
+		// giving password from excel
+		loginpage.enterPassword(str[0][1]);
+		// click on login
+		loginpage.clickOnLoginAgain();
+
+	}
+
+	@Then("I should access to the portal with title as {string}")
+	public void i_should_access_to_the_portal_with_title_as(String expectedText) {
+		// getting the text and storing into a string variable
+		String actualText = driver.findElement(By.linkText("Log out")).getText();
+		// comparing the expected with actual
+		Assert.assertEquals(actualText, expectedText);
+		// quit the driver
+		driver.quit();
+
+	}
+
 	// Scenario: Valid Credential Test
 
 	@When("I enter username as {string} and I enter password as {string}")
 	public void i_enter_username_as_and_I_enter_password_as(String userName, String password)
 			throws InterruptedException {
 		// click on login in home page
-
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.clickOnLogin();
 		// providing explicit wait of 30 seconds to wait for the presence of login user
@@ -75,15 +106,14 @@ public class StepDefinition {
 		Assert.assertEquals(actualText, expectedText);
 		// quit the driver
 		driver.quit();
-
 	}
+	
 	// Scenario Outline: Valid Credential Test
 
 	@When("I enter valid username as {string} and password as {string}")
 	public void i_enter_valid_username_as_and_password_as(String userName, String password)
 			throws InterruptedException {
 		// click on login in home page
-
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.clickOnLogin();
 		// providing explicit wait of 30 sec to locate for the presence of user name and
@@ -112,14 +142,16 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
-	// Scenario: Scenario: Empty userName
+
+// Scenario: Scenario: Empty userName
 
 	@When("I  will not enter valid username as {string} and i will enter valid password as {string}")
 	public void i_will_not_enter_valid_username_as_and_i_will_enter_valid_password_as(String userName,
 			String password) {
 		// click on login in the home page
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.clickOnLogin();;
+		loginpage.clickOnLogin();
+		;
 		// providing explicit wait of 30 sec to locate for the presence of username and
 		// password elements
 		WebDriverWait wait = new WebDriverWait(driver, 30);
@@ -145,6 +177,7 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
+	
 	// Scenario: Empty password
 
 	@When("I enter valid username as {string} and i will not enter password  {string}")
@@ -176,6 +209,7 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
+	
 	// Scenario: valid filling contact
 
 	@When("I enter valid recepeintEmail as {string} and recepientName as {string} and message as {string}")
@@ -211,6 +245,7 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
+	
 	// Scenario: Contact Blank fill
 
 	@When("I will not enter valid recepientEmail as {string} and recepientName as {string} and message as {string}")
@@ -243,6 +278,7 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
+	
 	// Scenario: selecting a product in the home page
 
 	@When("I click on the product in home page and click on add to cart")
@@ -278,6 +314,7 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
+	
 	// Scenario: Deleting a product from the cart
 
 	@When("I click on delete")
@@ -321,6 +358,7 @@ public class StepDefinition {
 		}
 		driver.quit();
 	}
+	
 	// Scenario: Placing order
 
 	@When("I click on place order")
@@ -394,7 +432,6 @@ public class StepDefinition {
 		UserDetailPage userdetailpage = new UserDetailPage(driver);
 		userdetailpage.enterName(name);
 		// entering the country
-
 		userdetailpage.enterCountry(countryName);
 		// entering the city
 		userdetailpage.enterCity(cityName);
@@ -532,7 +569,7 @@ public class StepDefinition {
 		driver.quit();
 	}
 
-	// Scenario: Filling all the userdetails and click on close button
+	// Scenario: Filling all the user details and click on close button
 
 	@When("I enter the useer name as {string} and country as {string} and city as {string} and credit card as {string} and month as {string} and year as {string} and click on purchase order and click on close")
 	public void i_enter_the_useer_name_as_and_country_as_and_city_as_and_credit_card_as_and_month_as_and_year_as_and_click_on_purchase_order_and_click_on_close(
@@ -552,7 +589,7 @@ public class StepDefinition {
 		addtocartpage.clickOnAddToCart();
 		// waiting for the alert message
 		wait.until(ExpectedConditions.alertIsPresent());
-		// click on ok in the laert pop up
+		// click on ok in the alert pop up
 		addtocartpage.clickOnAlert();
 		// click on cart in the home page
 		CartInfoPage cartinfopage = new CartInfoPage(driver);
@@ -560,7 +597,7 @@ public class StepDefinition {
 		// click on place order in the cart page
 		PlaceOrderPage placeorderpage = new PlaceOrderPage(driver);
 		placeorderpage.clickOnPlaceOrder();
-		// entering username
+		// entering user name
 		UserDetailPage userdetailpage = new UserDetailPage(driver);
 		userdetailpage.enterName(name);
 		// entering the country
@@ -594,7 +631,7 @@ public class StepDefinition {
 		// click on sign up in the home page
 		signUpPage signuppage = new signUpPage(driver);
 		signuppage.clickOnSignUp();
-		// entering a new username
+		// entering a new user name
 		signuppage.enterUserName(userName);
 		// entering a new password
 		signuppage.enterPassword(password);
@@ -602,7 +639,7 @@ public class StepDefinition {
 
 	@Then("I should click on signUp")
 	public void i_should_click_on_signUp() {
-		// click on signup in the pop up
+		// click on sign up in the pop up
 		signUpPage signuppage = new signUpPage(driver);
 		signuppage.againClickOnSignUp();
 		// providing some explicit wait of 30 seconds for the alert message
@@ -615,18 +652,19 @@ public class StepDefinition {
 		driver.switchTo().alert().accept();
 		driver.quit();
 	}
-	// Scenario: Already exsisted user for SignUp
+	
+	// Scenario: Already existed user for SignUp
 
 	@When("I enter the already used username as {string} and password as {string}")
 	public void i_enter_the_already_used_username_as_and_password_as(String userName, String password)
 			throws InterruptedException {
-		// click on the signup in the home page
+		// click on the sign up in the home page
 		signUpPage signuppage = new signUpPage(driver);
 		signuppage.clickOnSignUp();
 		Thread.sleep(1000);
-		// entering the already existed username
+		// entering the already existed user name
 		signuppage.enterUserName(userName);
-		// entering the password of already existed username
+		// entering the password of already existed user name
 		signuppage.enterPassword(password);
 	}
 
@@ -646,16 +684,17 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
-// scenario: empty username and password for sign up
 	
+	// scenario: empty user name and password for sign up
+
 	@When("I will not enter the username {string} and i will not enter the password {string}")
 	public void i_will_not_enter_the_username_and_i_will_not_enter_the_password(String userName, String password)
 			throws InterruptedException {
-		// click on signup
+		// click on sign up
 		signUpPage signuppage = new signUpPage(driver);
 		signuppage.clickOnSignUp();
 		Thread.sleep(1000);
-		// entering username
+		// entering user name
 		signuppage.enterUserName(userName);
 		// entering password
 		signuppage.enterPassword(password);
@@ -663,18 +702,18 @@ public class StepDefinition {
 
 	@Then("I should click on signup and I should get the popup message as {string}")
 	public void i_should_click_on_signup_and_I_should_get_the_popup_message_as(String signUpSuccessfullyExpectedText) {
-		//click on signup in home page
+		// click on sign up in home page
 		signUpPage signuppage = new signUpPage(driver);
 		signuppage.againClickOnSignUp();
-		//providing some explicit wait of 30 seconds for alert
+		// providing some explicit wait of 30 seconds for alert
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.alertIsPresent());
-		//getting the text and storing it in string variable
+		// getting the text and storing it in string variable
 		String signUpSuccessfullyaActualText = driver.switchTo().alert().getText();
-		//comparing expected with actual
+		// comparing expected with actual
 		Assert.assertEquals(signUpSuccessfullyaActualText, signUpSuccessfullyExpectedText);
 		driver.switchTo().alert().accept();
-		//quit the driver
+		// quit the driver
 		driver.quit();
 	}
 
@@ -685,7 +724,6 @@ public class StepDefinition {
 		// click on phones in the home page
 		CategoryPage categorypage = new CategoryPage(driver);
 		categorypage.clickonphone();
-
 	}
 
 	@Then("I search for mobile phone visibility for assertion")
@@ -716,18 +754,19 @@ public class StepDefinition {
 		// quit the driver
 		driver.quit();
 	}
+	
 	// Scenario: checking categories for Monitors
 
 	@When("I click on monitors it will show only monitors")
 	public void i_click_on_monitors_it_will_show_only_monitors() {
-		// click on mobitors in the home page
+		// click on monitors in the home page
 		CategoryPage categorypage = new CategoryPage(driver);
 		categorypage.clickonmonitor();
 	}
 
 	@Then("I search for monitors visibility for assertion")
 	public void i_search_for_monitors_visibility_for_assertion() {
-		// getting the text and storing it ina string variable
+		// getting the text and storing it in a string variable
 		String actualText = driver.findElement(By.xpath("//img[@src='imgs/asusm.jpg']/ancestor::a")).getText();
 		// comparing the expected with the actual
 		Assert.assertEquals(actualText, "");

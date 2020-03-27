@@ -20,6 +20,46 @@ formatter.result({
   "status": "passed"
 });
 formatter.scenario({
+  "name": "Login Valid Credential using excel",
+  "description": "",
+  "keyword": "Scenario"
+});
+formatter.step({
+  "name": "I enter login details from Excel \"src/test/resources/excel/Productstore.xlsx\" with SheetName \"LoginValidCredential\"",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "com.cts.stepdefinition.StepDefinition.i_enter_login_details_from_Excel_with_SheetName(java.lang.String,java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should access to the portal with title as \u0027Log out\u0027",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "com.cts.stepdefinition.StepDefinition.i_should_access_to_the_portal_with_title_as(java.lang.String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.background({
+  "name": "Below are the common steps for the scenarios",
+  "description": "",
+  "keyword": "Background"
+});
+formatter.step({
+  "name": "I have browser with productstore page.",
+  "keyword": "Given "
+});
+formatter.match({
+  "location": "com.cts.stepdefinition.StepDefinition.i_have_browser_with_productstore_page()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.scenario({
   "name": "Valid Credential Test",
   "description": "",
   "keyword": "Scenario"
@@ -663,7 +703,7 @@ formatter.scenario({
   "keyword": "Scenario"
 });
 formatter.step({
-  "name": "I enter username as \u0027sulochana@gmail.com\u0027 and Password as \u0027sulochana\u0027",
+  "name": "I enter username as \u0027sureshraina@gmail.com\u0027 and Password as \u0027suresham\u0027",
   "keyword": "When "
 });
 formatter.match({
@@ -680,8 +720,7 @@ formatter.match({
   "location": "com.cts.stepdefinition.StepDefinition.i_should_click_on_signUp()"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: expected [Sign up successful.] but found [Please fill out Username and Password.]\r\n\tat org.testng.Assert.fail(Assert.java:97)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:136)\r\n\tat org.testng.Assert.assertEquals(Assert.java:118)\r\n\tat org.testng.Assert.assertEquals(Assert.java:575)\r\n\tat org.testng.Assert.assertEquals(Assert.java:585)\r\n\tat com.cts.stepdefinition.StepDefinition.i_should_click_on_signUp(StepDefinition.java:613)\r\n\tat ✽.I should click on signUp(file:///C:/Users/USER/eclipse-workspace/ProductStoreBDD2/src/main/resources/feature/Login.feature:60)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.background({
   "name": "Below are the common steps for the scenarios",
